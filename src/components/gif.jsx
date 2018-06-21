@@ -13,10 +13,14 @@ class Gif extends Component {
     return nextProps.id !== this.props.id;
   }
 
+  // Whenever the initial state holds a value null
+  // this render function will handle it with an if
+  // statement.
   render() {
   if (!this.props.id) {
     return null;
   }
+
 
     const src = `https://media0.giphy.com/media/${this.props.id}/200w.gif`;
     return (

@@ -1,0 +1,19 @@
+A component can't change its own props, but it can change the props of its children (video: 0:25:30).
+
+The browser is goes thru these steps when change in DOM (Document Object Model):
+
+JS>Style>Layout>Paint>Composite
+
+React helps us to touch the DOM as minimum as possible.
+
+React uses a virtual DOM. When the page is reloaded the virtual DOM is also reloaded and then React figures out what the differences are between DOM and Virtual DOM and then React renders only those areas of the DOM that have actually changed.
+
+setState()>Render()>Effective diff
+
+When the setStat() changes then the Render() of the parent and its children are called. React then compares the new rendered information of the components with the rendered information in memory inside the Virtual DOM and then applies the differenc as a patch to the actual DOM.
+
+For identifying differences React looks at every component whether:
+- the root type has changed, i.e., type component (searchbar, giflist, etc.);
+- if not then it checks whether the attributes of the component have changed, and it looks first at the 'key' attribute (see gif_list.jsx on line 14 col 42).
+
+With render React is creating a virtual DOM and this virtual DOM is then compared with the actual DOM.

@@ -37,6 +37,12 @@ class App extends Component {
     });
   }
 
+
+  //When the SearchBar is instantiated on line 48 we 
+  //are passing the props which is the searchFunction.
+  //Doing so we are passing a function that the SearchBar
+  //can use.
+
   render() {
     return(
       <div>
